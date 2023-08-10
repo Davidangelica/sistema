@@ -3,7 +3,7 @@ from routers.administrador import router as ra
 from routers.empleados import router as re
 from routers.productos import router as rp
 from seguridad.autenticacion_admin import router as rad
-from seguridad.autenticacion_empleado import router as rae 
+from seguridad.autenticacion_empleado import router as rae
 
 # app
 app = FastAPI()

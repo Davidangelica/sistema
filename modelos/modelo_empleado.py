@@ -7,6 +7,7 @@ from sqlalchemy.orm import sessionmaker
 
 class Empleado (BaseModel):
     id:int | None
+    nombre_de_usuario : str
     nombre : str
     apellido : str
     email : str
@@ -23,6 +24,7 @@ base = declarative_base()
 class EmpleadoDB (base):
     __tablename__ = 'empleados'
     id = Column(Integer(), primary_key=True)
+    nombre_de_usuario = Column(String(),nullable=False,unique=True)
     nombre = Column(String(),nullable=False,unique=False)
     apellido = Column(String(),nullable=False,unique=False)
     email = Column(String(),nullable=False,unique=True)

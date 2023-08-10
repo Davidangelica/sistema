@@ -1,13 +1,14 @@
 from sqlite3 import Connection
+import bcrypt
 from seguridad.administrador_data import administrador_1
 from seguridad.pw import contraseña
-from funciones.funciones_del_sistema import *
 from modelos.modelo_administrador import Administrador,AdministradorDB, session_admin
 from datetime import datetime,date
 
 def crear_administrador():
     administrador = administrador_1
-    contraseña_codificada = hash_contraseña(contraseña.encode('utf-8'))
+    salt = bcrypt.gensalt()
+    contraseña_codificada = bcrypt.hashpw(contraseña.encode('utf-8'),salt)
     administrador['contraseña'] = contraseña_codificada
     nuevo_administrador = AdministradorDB(**administrador)
     

@@ -1,6 +1,6 @@
 # fastAPi
 from fastapi import APIRouter, Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm, HTTPAuthorizationCredentials, HTTPBearer, HTTPBasic
 #funciones
 from funciones.funciones_administrador import *
 
@@ -23,6 +23,7 @@ router = APIRouter()
 
 oauth2_administrador = OAuth2PasswordBearer(tokenUrl='/login/administrador')
 
+
 @router.post('/login/administrador')
 async def administrador(administrador:Administrador,conn:Connection = Depends(conexion_a_base_de_datos)):
     db = sql.connect(conn)
@@ -36,12 +37,14 @@ async def administrador(administrador:Administrador,conn:Connection = Depends(co
     if chek_credenciales:
         expire = datetime.utcnow() + timedelta(minutes=2)
         token = {'sub':administrador.nombre,
-                 'exp':expire}
+                 'exp':expire,
+                 'rol':'administrasdor'}
         token_encode = jwt.encode(token,secret_key,algorithm=ALGORITHM)
         return token_encode
     
 
-def token_auth (conn:Connection = Depends(conexion_a_base_de_datos),token:str = Depends(oauth2_administrador)):
+
+def token_auth_admin (conn:Connection = Depends(conexion_a_base_de_datos),token:str = Depends(oauth2_administrador)):
     db = sql.connect(conn)
     admin_nombre = jwt.decode(token,secret_key,algorithms=ALGORITHM).get('sub')
     chek_admin = buscar_administrador(admin_nombre,db,2)

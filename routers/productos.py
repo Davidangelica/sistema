@@ -32,7 +32,7 @@ async def producto(producto : Productos,  conn : Connection = Depends(conexion_a
 
 # buscar por id
 @router.get('/productos/admin/id/{id}')
-async def producto (id:int, auth = Depends(token_auth_admin), conn:Connection = Depends(conexion_a_base_de_datos)):
+async def producto (id:int, conn:Connection = Depends(conexion_a_base_de_datos)):
     db = sql.connect(conn)
     return buscar_producto(id,'id',db)
 

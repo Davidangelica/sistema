@@ -1,6 +1,7 @@
 # fastAPi
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Request
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.staticfiles import StaticFiles
 #funciones
 from funciones.funciones_administrador import *
 
@@ -27,11 +28,11 @@ oauth2_empleado = OAuth2PasswordBearer(tokenUrl='/login/empleado')
 
 
 @router.post('/login/empleado')
-async def empleado(form:OAuth2PasswordRequestForm = Depends(), conn:Connection = Depends(conexion_a_base_de_datos)):
+async def empleado(empleado:Empleado, conn:Connection = Depends(conexion_a_base_de_datos)):
     db = sql.connect(conn)
     
     try:
-        chek_credenciales = chek_credenciales_empleado(form.username,form.password,db)
+        chek_credenciales = chek_credenciales_empleado(empleado.nombre_de_usuario,empleado.contraseña,db)
         if not chek_credenciales:
             raise Exception
    
@@ -40,13 +41,22 @@ async def empleado(form:OAuth2PasswordRequestForm = Depends(), conn:Connection =
         
     expire = datetime.utcnow() + timedelta(minutes=2)
     
-    token = {'sub':form.username,
+    token = {'sub':empleado.nombre_de_usuario,
              'exp':expire,
              'rol':'empleado'}
     
     token_encriptado = jwt.encode(token,secret_key,algorithm=ALGORITHM)
     
     return token_encriptado
+
+@router.post('/nombre/empleado/verificacion')
+async def admin(token_json:dict):
+    token = token_json['token']
+    admin_nombre = jwt.decode(token,secret_key,algorithms=ALGORITHM).get('sub')
+    nombre = {'nombre':admin_nombre}
+    return nombre
+
+
 
 
 
@@ -55,3 +65,10 @@ def token_auth_empleado (conn:Connection = Depends(conexion_a_base_de_datos),tok
     empleado_nombre = jwt.decode(token,secret_key,algorithms=ALGORITHM).get('sub')
     chek_empleado = buscar_empleado(empleado_nombre,db,2)
     return chek_empleado
+
+
+def verificar_permisos_empleado(request: Request, conn:Connection = Depends (conexion_a_base_de_datos)):
+    db = sql.connect(conn)
+    nombre_empelado = request.query_params
+    empleado = buscar_empleado(nombre_empelado,db,2)
+    return empleado

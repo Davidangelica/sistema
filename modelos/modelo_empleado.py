@@ -8,10 +8,10 @@ from sqlalchemy.orm import sessionmaker
 class Empleado (BaseModel):
     id:int | None
     nombre_de_usuario : str
-    nombre : str
-    apellido : str
-    email : str
-    dni : int
+    nombre : str | None
+    apellido : str | None
+    email : str | None
+    dni : int | None
     contraseña : str
     fecha_de_creacion : datetime | None
     

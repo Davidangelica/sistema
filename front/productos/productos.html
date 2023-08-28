@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="productos.css">
+  <title>Pro Sidebar</title>
+</head>
+<body>
+  <div class="layout has-sidebar fixed-sidebar fixed-header">
+    <!-- Sidebar code here -->
+    <aside id="sidebar" class="sidebar break-point-sm has-bg-image">
+      <!-- Sidebar content here -->
+    </aside>
+    
+    <div id="overlay" class="overlay"></div>
+    
+    <!-- Main content -->
+    <div class="layout">
+      <main class="content">
+        <div class="table-container">
+          <div class="search-container">
+            <input type="text" id="search" placeholder="Buscar producto...">
+          </div>
+          <table class="product-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad en Stock</th>
+                <th>Fecha de Actualización</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Producto A</td>
+                <td>$20.00</td>
+                <td>50</td>
+                <td>2023-08-14</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Producto B</td>
+                <td>$30.00</td>
+                <td>30</td>
+                <td>2023-08-14</td>
+              </tr>
+              <!-- Add more rows for other products -->
+            </tbody>
+          </table>
+        </div>
+      </main>
+      <div class="overlay"></div>
+    </div>
+  </div>
+</body>
+</html>

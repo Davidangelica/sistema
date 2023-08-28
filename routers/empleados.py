@@ -26,7 +26,7 @@ async def empleado(empleado:Empleado,auth_admin = Depends(token_auth_admin)):
                session_empleado.add(nuevo_empleado)
                session_empleado.commit()
                session_empleado.close()
-               return 'empleado añadido de forma exitosa'
+               return 'empleado añadido de forma exitosa',auth_admin
           
           except Exception as e:
                return e

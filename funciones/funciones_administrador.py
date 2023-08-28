@@ -45,7 +45,7 @@ def buscar_administrador(nombre:str,conn:Connection,retorno:int) -> Administrado
         return e
 
 
-def chek_credenciales_admin(nombre, contrasena_plana, conn:Connection):
+def chek_credenciales_admin(nombre, contrasena_plana, conn:Connection) -> bool:
     cursor = conn.cursor()
 
     cursor.execute('SELECT contraseña FROM administrador WHERE administrador.nombre = ?', (nombre,))

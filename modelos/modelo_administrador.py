@@ -7,9 +7,9 @@ from sqlalchemy.orm import sessionmaker
 class Administrador (BaseModel):
     id: int | None
     nombre:str
-    email : str
+    email : str | None
     contraseña : str
-    fecha_de_creacion : datetime
+    fecha_de_creacion : datetime | None
     
     @property 
     def adminstrador(self):

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/productos/productos.css">
+  <link rel="stylesheet" href="/static/empleados/tabla_empleado.css">
+  <link rel="stylesheet" href="/static/empleados/boton_añadir.css">
+  <link rel="stylesheet" href="/static/empleados/barra_de_busqueda.css">
+  <link rel="stylesheet" href="/static/empleados/formulario_añadir.css">
+  <title>Pro Sidebar</title>
+</head>
+<body>
+  <div class="layout has-sidebar fixed-sidebar fixed-header">
+    <!-- Sidebar code here -->
+    <aside id="sidebar" class="sidebar break-point-sm has-bg-image">
+      <!-- Sidebar content here -->
+    </aside>
+    
+    <!-- Main content -->
+    <div class="layout">
+      <main class="content">
+        <div class="table-container">
+            <button id="btnAgregarEmpleado" class="btn-agregar">Añadir Empleados</button>
+          </div>
+          <div class="search-container">
+            <div class="search-container"> 
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+                <div class="boxy">
+                <input id = "search" type="text" placeholder="Buscar empleado..." class="iconInput">
+               <button class="icon"><i class="fas fa-times"></i></button>
+      </div>
+    </div>
+    <div id="formulario-agregar-empleados" style="display: none;">
+      <h2>Agregar Empleado</h2>
+      <form id="formulario">
+        <!-- Campos del formulario -->
+        <label for="nombre_usuario">Nombre de usuario</label>
+        <input type="text" id="nombre_de_usuario"  ><br>
+    
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" ><br>
+    
+        <label for="stock">Apellido</label>
+        <input type="text" id="apellido"  required min="0"><br>
+
+        <label for="stock">Email</label>
+        <input type="text" id="email"  required min="0"><br>
+
+        <label for="stock">Dni</label>
+        <input type="number" id="dni"  required min="0"><br>
+
+        <label for="stock">Contraseña</label>
+        <input type="password" id="contraseña"  required min="0"><br>
+    
+        <!-- Agregar más campos según sea necesario -->
+    
+        <button type="submit" id = "btnGuardar">Guardar</button>
+        <button type="button" id ="btnCancelar">Cancelar</button>
+      </form>
+    </div>
+          </div>
+          <table id="tabla_empleados" class="product-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre De Usuario</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>DNI</th>
+                <th>Fecha de Creación</th>
+                <th>Opciones</th> <!-- Nueva columna "Actions" -->
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí colocas tus filas de datos -->
+            </tbody>
+          </table>
+          <div id="formularioAgregarEmpleado" class="formulario-agregar">
+            <!-- Aquí coloca tu formulario para añadir empleados -->
+          </div>
+        </div>
+
+<link rel="stylesheet" type="text/css" href="\static\DataTable\css\dataTables.dataTables.min.css">
+<link rel="stylesheet" href="\static\DataTable\css\dataTables.bootstrap4.css">
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+<script src="/static/empleados/empleados.js"></script>
+
+  
+</body>
+</html>

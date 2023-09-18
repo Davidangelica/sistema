@@ -1,3 +1,4 @@
+#base de datos
 from sqlite3 import Connection
 import bcrypt
 from seguridad.administrador_data import administrador_1

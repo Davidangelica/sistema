@@ -1,8 +1,12 @@
+# basemodel
 from pydantic import BaseModel
+#datetime
 from datetime import datetime,date
+#sqlalchemy
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, DateTime, create_engine, func, Float, Boolean
+from sqlalchemy import Column, Integer, String, DateTime, create_engine
 from sqlalchemy.orm import sessionmaker
+
 
 class Administrador (BaseModel):
     id: int | None
@@ -15,7 +19,7 @@ class Administrador (BaseModel):
     def adminstrador(self):
         return True
     
-    
+#url de la base de datos
 db_url = 'sqlite:///C:/programa_distribudora/base_de_datos/distribuidora.db'
 engine = create_engine(db_url)
 base = declarative_base()

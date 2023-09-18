@@ -1,0 +1,37 @@
+/* Estilo para el contenedor de la tabla y los elementos internos */
+.table-container {
+    position: relative; /* Establece posición relativa para que los elementos internos se posicionen en relación con este contenedor */
+    margin-top: 60px; /* Ajusta según el espacio que necesites entre el botón y la tabla */
+  }
+  
+  /* Estilo para el botón */
+  #btnAgregarEmpleados {
+    background-color: #4caf50; /* Color verde */
+    color: #fff; /* Texto en color blanco */
+    font-size: 18px; /* Tamaño de fuente */
+    padding: 10px 20px; /* Espaciado interno para hacerlo más grande */
+    position: absolute; /* Añade posición absoluta */
+    top: 0; /* Coloca en la parte superior */
+    left: 185px; /* Ajusta la posición izquierda según tus necesidades */
+    margin: 20px; /* Agrega margen alrededor del botón para separarlo del borde del contenedor */
+    z-index: 1; /* Ajusta el índice z para que esté por encima de la tabla */
+    display: block;
+  }
+  
+  /* Ajustes adicionales para el botón (opcional) */
+  #btnAgregarEmpleados:hover {
+    background-color: #45a049; /* Cambia de color al pasar el mouse */
+    cursor: pointer; /* Cambia el cursor al puntero al pasar el mouse */
+  }
+  
+  .search-container {
+  margin-top: 70px; /* Ajusta el margen superior de la barra de búsqueda */
+}
+/* Estilo para el contenedor del campo de búsqueda */
+.search-container {
+  margin-left: 10px; /* Margen izquierdo */
+  margin-right: 10px; /* Margen derecho */
+  text-align: center; /* Alineación del texto en el centro */
+}
+
+/* Resto de tu estilo CSS... */

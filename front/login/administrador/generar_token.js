@@ -61,7 +61,7 @@ botonInicio.addEventListener('click', () => {
 
       generarCookie();
 
-      //history.replaceState({}, "Menu Principal", "/menuPrincipal");
+     
     })
     .catch(error => {
     

@@ -1,0 +1,88 @@
+/* Estilo para el contenedor de la tabla y los elementos internos */
+.table-container {
+    position: relative; /* Establece posición relativa para que los elementos internos se posicionen en relación con este contenedor */
+    margin-top: 60px; /* Ajusta según el espacio que necesites entre el botón y la tabla */
+  }
+  
+  /* Estilo para el botón */
+  #btnAgregarProductos {
+    background-color: #4caf50; /* Color verde */
+    color: #fff; /* Texto en color blanco */
+    font-size: 18px; /* Tamaño de fuente */
+    padding: 10px 20px; /* Espaciado interno para hacerlo más grande */
+    position: absolute; /* Añade posición absoluta */
+    top: 0; /* Coloca en la parte superior */
+    left: 185px; /* Ajusta la posición izquierda según tus necesidades */
+    margin: 20px; /* Agrega margen alrededor del botón para separarlo del borde del contenedor */
+    z-index: 1; /* Ajusta el índice z para que esté por encima de la tabla */
+    display: block;
+  }
+  
+  /* Ajustes adicionales para el botón (opcional) */
+  #btnAgregarProductos:hover {
+    background-color: #45a049; /* Cambia de color al pasar el mouse */
+    cursor: pointer; /* Cambia el cursor al puntero al pasar el mouse */
+  }
+  
+  .search-container {
+  margin-top: 70px; /* Ajusta el margen superior de la barra de búsqueda */
+}
+/* Estilo para el contenedor del campo de búsqueda */
+.search-container {
+  margin-left: 10px; /* Margen izquierdo */
+  margin-right: 10px; /* Margen derecho */
+  text-align: center; /* Alineación del texto en el centro */
+}
+
+/* Resto de tu estilo CSS... */
+/* Estilos generales del formulario */
+/* Estilos generales del formulario */
+#formularioAgregar {
+  background-color: #f2f2f2; /* Fondo gris */
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 300px; /* Ajusta el ancho según tus necesidades */
+
+  /* Centrar vertical y horizontalmente */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 2; /* Asegura que el formulario esté por encima */
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="number"] {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+input[type="text"]:hover,
+input[type="number"]:hover {
+  border: 1px solid green; /* Borde verde al pasar el mouse */
+}
+
+/* Estilos para los botones */
+button[type="submit"] {
+  background-color: green; /* Botón Agregar verde */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button[type="button"] {
+  background-color: red; /* Botón Cancelar rojo */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}

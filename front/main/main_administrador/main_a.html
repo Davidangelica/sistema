@@ -7,19 +7,95 @@
   <link rel="stylesheet" href="/static/main/main.css">
 </head>
 <body>
-  <nav class="sidebar">
-    <ul>
-      <li><a href="#">Productos</a></li>
-      <li><a href="#">Órdenes</a></li>
-      <li><a href="#">Empleados</a></li>
-      <li><a href="#">Estadísticas</a></li>
-      <li><a href="#">Generar Orden</a></li>
-      <li> <a id="boton_cerrar">Cerrar sesion</a></li>
-    </ul>
-  </nav>
-  <div class="content">
-    <h1>Bienvenido al sistema de gestión Tisher</h1>
+  <section id="sidebar"> 
+    <div class="white-label">
+    </div> 
+    <div id="sidebar-nav">   
+      <ul>
+        <ul>
+          <li class="active"><a href="#" id="estadisticas"><i class="fa fa-dashboard"></i> Estadisticas</a></li>
+          <li><a href="#" id="boton_producto_a"><i class="fa fa-desktop"></i> Productos</a></li>
+          <li><a href="#" id="boton_empleados_a"><i class="fa fa-usd"></i> Empleados</a></li>
+          <li><a href="#" id="ordenes"><i class="fa fa-pencil-square-o"></i> Ordenes</a></li>
+          <li><a href="#" id="boton_cerrar"><i class="fa fa-sitemap"></i> Cerrar Sesion</a></li>
+        </ul>
+        
+      </ul>
+    </div>
+  </section>
+  <section id="content">
+    <div id="header">
+      <div class="header-nav">
+        <div class="menu-button">
+          <!--<i class="fa fa-navicon"></i>-->
+        </div>
+        <div class="nav">
+          <ul>
+            <li class="nav-settings">
+              <div class="font-icon"><i class="fa fa-tasks"></i></div>
+            </li>
+            <li class="nav-mail">
+              <div class="font-icon"><i class="fa fa-envelope-o"></i></div>
+            </li>
+            <li class="nav-calendar">
+              <div class="font-icon"><i class="fa fa-calendar"></i></div>
+            </li>
+            <li class="nav-chat">
+              <div class="font-icon"><i class="fa fa-comments-o"></i></div>
+            </li>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content-header">
+        <h1>Bienvenidos al sistema de gestión Tisher</h1>
+      </div>
+      <div class="widget-box sample-widget">
+        <div class="widget-header">
+          <h2>Widget Header</h2>
+          <i class="fa fa-cog"></i>
+        </div>
+        <div class="widget-content">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/87118/sample-data-1.png">
+        </div>
+      </div>
+      <div class="widget-box sample-widget">
+        <div class="widget-header">
+          <h2>Widget Header</h2>
+          <i class="fa fa-cog"></i>
+        </div>
+        <div class="widget-content">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/87118/sample-data-1.png">
+        </div>
+      </div>
+      <div class="widget-box sample-widget">
+        <div class="widget-header">
+          <h2>Widget Header</h2>
+          <i class="fa fa-cog"></i>
+        </div>
+        <div class="widget-content">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/87118/sample-data-1.png">
+        </div>
+      </div>
+        <div class="widget-box sample-widget">
+        <div class="widget-header">
+          <h2>Widget Header</h2>
+          <i class="fa fa-cog"></i>
+        </div>
+        <div class="widget-content">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/87118/sample-data-1.png">
+        </div>
+      </div>  
+    </div>
+  </section>
   </div>
   <script src="/static/main/cerrar_sesion.js"></script>
+  <script src="/static/main/main_administrador/boton_empleados.js"></script>
+  <script src="/static/main/main_administrador/boton_productos.js"></script>
+  <!-- <script src="/static/productos/productos.js"></script> -->
+  <!-- <script src="/static/empleados/empleados.js"></script> -->
 </body>
 </html>

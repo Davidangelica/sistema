@@ -7,8 +7,8 @@ from sqlalchemy.orm import sessionmaker
 class Productos (BaseModel):
     id : int | None
     nombre : str
-    precio : int
-    cantidad_en_stock : int | None
+    precio : str
+    cantidad_en_stock : str | None
     fecha_de_actualizacion : datetime | None
      
     @property

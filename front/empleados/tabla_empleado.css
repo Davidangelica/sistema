@@ -1,0 +1,30 @@
+/* Estilo para el botón "Añadir Empleados" */
+#btnAgregarEmpleado {
+    background-color: #4caf50; /* Color verde */
+    color: #fff; /* Texto en color blanco */
+    font-size: 18px; /* Tamaño de fuente */
+    padding: 10px 20px; /* Espaciado interno para hacerlo más grande */
+    position: absolute; /* Añade posición absoluta */
+    top: 0; /* Coloca en la parte superior */
+    left: 0; /* Coloca en la parte izquierda */
+    margin: 20px; /* Agrega margen alrededor del botón para separarlo del borde del contenedor */
+    z-index: 1; /* Ajusta el índice z para que esté por encima de la tabla */
+  }
+  
+  /* Ajustes adicionales para el botón (opcional) */
+  #btnAgregarEmpleado:hover {
+    background-color: #45a049; /* Cambia de color al pasar el mouse */
+    cursor: pointer; /* Cambia el cursor al puntero al pasar el mouse */
+  }
+  
+  /* Estilo para el contenedor de la tabla */
+  .table-container {
+    position: relative; /* Establece posición relativa para que los elementos absolutos se posicionen con respecto a este contenedor */
+    margin-top: 60px; /* Ajusta según el espacio que necesites entre el botón y la tabla */
+  }
+  
+  /* Estilo para la tabla */
+  #tabla_empleados {
+    width: 100%; /* Ajusta el ancho de la tabla al 100% */
+  }
+  

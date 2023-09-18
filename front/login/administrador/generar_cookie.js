@@ -16,9 +16,9 @@ function generarCookie() {
     const boton = document.getElementById('boton_inicio')
 
     boton.addEventListener('click',async function(){ 
-        await delay(2000);
+        await delay(1500);
     const token = localStorage.getItem('token');
-    const tokenObj = {"token":token }; // Crear el objeto JSON con la estructura {"token": "valor del token"}
+    const tokenObj = {"token":token }; 
 
     fetch('http://127.0.0.1:8000/nombre/admin/verificacion', {
         method: 'POST',

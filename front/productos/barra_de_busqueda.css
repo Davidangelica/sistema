@@ -1,0 +1,28 @@
+/* Añade estos estilos a tu archivo CSS */
+.search-container {
+    text-align: center; /* Centra el contenido horizontalmente */
+    margin-bottom: 20px; /* Agrega espacio debajo de la barra de búsqueda */
+  }
+  
+  .iconInput {
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid gray;
+    outline: none;
+    display: inline-block; /* Hace que el campo de búsqueda sea en línea */
+    margin-right: 10px; /* Agrega espacio entre el campo de búsqueda y el botón */
+  }
+  
+  .icon {
+    border: none;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    background-color: #5e91f6; /* Cambia el color de fondo del botón de búsqueda */
+    color: white; /* Cambia el color del icono de búsqueda */
+  }
+  
+  /* Otros estilos, como .borderFocus, pueden permanecer sin cambios */
+  

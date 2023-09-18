@@ -6,115 +6,50 @@ html {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: linear-gradient(#141e30, #243b55);
+    background: #f4f4f4;
   }
-  
-  .login-box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 430px;
-    padding: 40px 25px;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    text-align: center;
-  }
-  
-  .logo {
-    margin-bottom: 20px;
-  }
-  
-  .logo img {
-    max-width: 150px;
-    height: auto;
-  }
-  
-  .login-box h2 {
-    margin: 0 0 10px;
-    padding: 0;
-    color: #4caf50;
-    text-align: center;
-  }
-  
-  .login-box p {
-    margin: 0 0 20px;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .login-box .option-button {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    color: #4caf50;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: 0.5s;
-    letter-spacing: 4px;
-    border: 1px solid #4caf50;
-    border-radius: 5px;
-    width: 60%;
-  }
-  
-  .login-box .option-button:hover {
-    background: #4caf50;
-    color: #fff;
-    box-shadow: 0 0 5px #4caf50,
-                0 0 25px #4caf50,
-                0 0 50px #4caf50,
-                0 0 100px #4caf50;
-  }
-  
-  .table-container {
-    padding: 20px;
-  }
-  
-  .product-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-  }
-  
-  .product-table th,
-  .product-table td {
-    padding: 12px;
-    text-align: center;
-    color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .product-table th {
-    background-color: #4caf50;
-  }
-  
-  .product-table tr:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  .search-container {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  #search {
-    padding: 10px;
-    width: 60%;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.3);
-    color: #fff;
-  }
-  
-  #search::placeholder {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
+
+
+.product-table {
+  width: 80%; /* Cambia el ancho según tus necesidades */
+  margin: 0 auto; /* Centra horizontalmente la tabla */
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.product-table th,
+.product-table td {
+  padding: 12px;
+  text-align: center;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 16px; /* Ajusta el tamaño de la fuente según tus necesidades */
+}
+
+.product-table th {
+  background-color: #4caf50;
+}
+
+.product-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Elimina el centrado vertical en el contenedor */
+.table-container {
+  display: block; /* Cambia de flex a block */
+  text-align: center; /* Centra horizontalmente el contenido */
+  padding: 20px; /* Agrega un espacio alrededor del contenido */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semi-transparente */
+  z-index: 1; /* Asegura que esté detrás del formulario */
+}
+

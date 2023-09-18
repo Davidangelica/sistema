@@ -12,6 +12,7 @@ function obtenerValorDeCookie(nombre) {
   return null;
 }
 
+
 function enviarCookie(cookieValue) {
   console.log(cookieValue)
   const url = `http://127.0.0.1:8000/menuPrincipal/admin/${encodeURIComponent(cookieValue)}`;
@@ -33,7 +34,7 @@ function delay(ms) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  const botonInicio = document.getElementById("boton_inicio");
+  
   botonInicio.addEventListener("click", async function() {
       await delay(2500);
       const valorCookie = obtenerValorDeCookie("nombre");
@@ -43,3 +44,8 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   });
 });
+ 
+
+
+
+

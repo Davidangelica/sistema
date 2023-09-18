@@ -3,8 +3,13 @@ from sqlite3 import Connection
 from modelos.modelo_producto import Productos
 from funciones.funciones_del_sistema import *
 
-def buscar_producto (busqueda:str | int , atributo:str, conn:Connection) -> Productos | list[Productos]:
+def buscar_producto (busqueda:str | int | None , atributo:str, conn:Connection) -> Productos | list[Productos]:
     cursor = conn.cursor()
+    # todos
+    if atributo == 'total':
+        query = cursor.execute(f"SELECT * FROM productos")
+        if not query:
+            return 'no se encontraron resultados'
     #id
     if atributo == 'id':
          query = cursor.execute(f"SELECT * FROM productos WHERE productos.id =  '{busqueda}'")
@@ -80,3 +85,16 @@ def actualizar_producto(producto:Productos,conn:Connection):
     conn.commit()
     
     return 'el producto a sido actualizado con exito'
+
+
+def elimiar_productos(id:str,conn:Connection):
+    cursor = conn.cursor()
+    query = f'DELETE FROM productos WHERE productos.id = {id}'
+    try:
+        cursor.execute(query)
+
+    except Exception as e:
+        conn.rollback()
+        return e
+    
+    conn.commit()

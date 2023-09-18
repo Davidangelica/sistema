@@ -37,7 +37,7 @@ async def administrador(administrador:Administrador, conn:Connection = Depends(c
         chek_credenciales = chek_credenciales_admin(administrador.nombre, administrador.contraseña, db)
     
         if chek_credenciales:
-            expire = datetime.utcnow() + timedelta(minutes=60)
+            expire = datetime.utcnow() + timedelta(minutes=600)
             tiempo_expiracion_str = expire.strftime('%Y-%m-%d %H:%M:%S')
             token = {'sub':administrador.nombre,
                     'expiracion':tiempo_expiracion_str,
@@ -71,11 +71,15 @@ def token_auth_admin (conn:Connection = Depends(conexion_a_base_de_datos),token:
 
     
 
-
-def verificar_permisos_admin(request: Request, conn: Connection = Depends(conexion_a_base_de_datos)):
+def verificar_permisos_admin(request: Request, nombre: str = None, conn: Connection = Depends(conexion_a_base_de_datos)):
+    if nombre is None:
+        raise Exception("El parámetro 'nombre' es nulo.")
+    
     db = sql.connect(conn)
-    nombre_admin = request.query_params 
-    admin = buscar_administrador(nombre_admin,db,2)
+    admin = buscar_administrador(nombre, db, 2)
+    if admin is None:
+        raise Exception("No se encontró el administrador")
+    
     return admin
 
     

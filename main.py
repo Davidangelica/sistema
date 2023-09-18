@@ -1,14 +1,17 @@
+#fast api
 from fastapi import FastAPI,Depends
-from seguridad.autenticacion_admin import token_auth_admin
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
+#routers
 from routers.administrador import router as ra
 from routers.empleados import router as re
 from routers.productos import router as rp
+from routers.menu import router as rm
+#seguridad
 from seguridad.autenticacion_admin import router as rad
 from seguridad.autenticacion_empleado import router as rae
-from routers.menu import router as rm
-from modelos.modelo_administrador import Administrador
+
+
 
 # app
 app = FastAPI()
